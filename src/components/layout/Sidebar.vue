@@ -14,34 +14,6 @@ export default {
   components: {Widget},
   props: {
     widgetOptions: Array
-  },
-  data() {
-    return {
-      showProxy: false
-    }
-  },
-  methods: {
-    handleMouseDown(e) {
-      return;
-      const proxyEl = this.$refs.dragProxy;
-      this.showProxy = true;
-      proxyEl.style.top = e.clientY + 'px';
-      proxyEl.style.left = e.clientX + 'px';
-
-      const handleMouseMove = e => {
-        proxyEl.style.top = e.clientY + 'px';
-        proxyEl.style.left = e.clientX + 'px';
-      }
-      
-      const handleMouseUp = e => {
-        this.showProxy = false;
-        document.removeEventListener('mousemove', handleMouseMove);
-        document.removeEventListener('mouseup', handleMouseUp);
-      }
-
-      document.addEventListener('mousemove', handleMouseMove);
-      document.addEventListener('mouseup', handleMouseUp);
-    }
   }
 }
 </script>
