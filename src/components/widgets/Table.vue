@@ -1,10 +1,20 @@
 <template>
-  <h-table :columns="columns" :data="data" width="300" height="200"></h-table>
+  <h-table :columns="columns" :data="data" :width="width" :height="height" notSetWidth autoHeadWidth></h-table>
 </template>
 
 <script>
 export default {
   name: "Table",
+  props: {
+    width: {
+      type: Number,
+      default: 500
+    },
+    height: {
+      type: Number,
+      default: 400
+    }
+  },
   data() {
     return {
       columns: [

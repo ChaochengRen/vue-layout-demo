@@ -4,7 +4,7 @@
     @dragstart="handleDragStart($event)"
     @dragend="handleDragEnd($event)"
     draggable="true"
-  ></div>
+  >{{option.comp.title}}</div>
 </template>
 
 <script>
@@ -20,7 +20,10 @@ export default {
     handleDragStart(e) {
       const dataTransfer = e.dataTransfer;
       dataTransfer.effectAllowed = "move";
-      dataTransfer.setData("text/plain", JSON.stringify(this.option));
+      dataTransfer.setData("text/plain", JSON.stringify({
+        type: "create",
+        option: this.option
+      }));
       return true;
     },
     handleDragEnd(e) { }
@@ -33,5 +36,8 @@ export default {
   width: 100%;
   height: 100%;
   background: #fff;
+  font-size: 18px;
+  text-align: center;
+  line-height: 6;
 }
 </style>
