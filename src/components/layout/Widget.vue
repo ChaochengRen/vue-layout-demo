@@ -20,7 +20,7 @@ export default {
     handleDragStart(e) {
       const dataTransfer = e.dataTransfer;
       dataTransfer.effectAllowed = "move";
-      dataTransfer.setData("text/plain", JSON.stringify({
+      dataTransfer.setData("text", JSON.stringify({
         type: "create",
         option: this.option
       }));

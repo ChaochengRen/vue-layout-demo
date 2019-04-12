@@ -288,6 +288,7 @@ export default {
         right: 0;
         width: 10px;
         height: 10px;
+        z-index: 10;
         cursor: se-resize;
         &:hover {
           background: #aaa;

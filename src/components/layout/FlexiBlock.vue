@@ -45,7 +45,7 @@ export default {
     handleDragStart(e) {
       const dataTransfer = e.dataTransfer;
       dataTransfer.effectAllowed = "move";
-      dataTransfer.setData("text/plain", JSON.stringify({
+      dataTransfer.setData("text", JSON.stringify({
         type: "move",
         cursor: {
           posX: e.clientX,
@@ -138,6 +138,7 @@ export default {
     i {
       transition: color 0.2s;
       margin-right: 4px;
+      z-index: 10;
     }
     i:hover {
       color: #888;
